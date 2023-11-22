@@ -62,7 +62,7 @@ const CardDone = () => {
   return (
     <div className="container mx-auto my-8">
       <div className="flex justify-between items-center mb-6">
-        <h1 data-aos="fade-down" className="font-semibold text-lg ml-4 lg:text-2xl xl:text-2xl">
+        <h1 data-aos="fade-down" className="font-semibold text-lg ml-4 lg:text-2xl xl:text-2xl hp:text-xs">
           List Siswa X-RPL-2
         </h1>
         <CategoryDropdown categories={['Siswa', 'LakiLaki', 'Perempuan', ...categories]} onFilter={handleFilter} />
@@ -71,7 +71,6 @@ const CardDone = () => {
         {filteredProfiles.map((profile) => (
           <CardProfile key={profile.uniqueKey} user={profile} />
         ))}
-        {/* Show Skeleton when filteredProfiles is empty */}
         {filteredProfiles.length === 0 &&
           Array.from({ length: 6 }).map((_, index) => (
             <Skeleton key={index} height={300} width={'100%'} style={{ borderRadius: '8px' }} />
